@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/CoconutOS/coconutos.svg?branch=master)](https://travis-ci.org/CoconutOS/coconutos)
 
-Welcome to the world of CoconutOS! The linux distribution you didn't ask for, but the one you definitely need! Inspired by the ironically hilarious wisdom of Richie Guix in a YouTube video by "Programmers are also human". The genesis of CoconutOS is a tongue-in-cheek love letter to the quirks and idiosyncrasies of the GNU/Linux community. 
+Welcome to the world of CoconutOS! The linux distribution you didn't ask for, but the one you definitely need! Inspired by the ironically hilarious wisdom of Richie Guix in a YouTube video by ["Programmers are also human"](https://www.youtube.com/watch?v=lE4UXdJSJM4). The genesis of CoconutOS is a tongue-in-cheek love letter to the quirks and idiosyncrasies of the GNU/Linux community. 
 
 ## About CoconutOS
 
