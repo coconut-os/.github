@@ -12,7 +12,7 @@ CoconutOS takes the best of GNU/Linux - its flexibility, freedom, and robustness
 
 In this GitHub organization, you'll find all of our most prized CoconutOS treasures:
 
-1. `coconut-mklive `: Our crown jewel, the core OS. You may or may not turn your watch into a web server with it. Results may vary.
+1. `coconut-mklive`: Our crown jewel, the core OS. You may or may not turn your watch into a web server with it. Results may vary.
 2. `coconutos-packages`: Find all the packages you need. Libreoffice? Check. Pacman (no, not the game)? Check.
 3. `coconutos-documentation`: Because even with an OS this intuitive, who knows, you might need a little help.
 
