@@ -1,3 +1,3 @@
 # coconutOS
 
-## The only true OS
+## The one and only true OS
