@@ -6,7 +6,7 @@ Welcome to the world of CoconutOS! The linux distribution you didn't ask for, bu
 
 ## About CoconutOS
 
-CoconutOS takes the best of GNU/Linux - its flexibility, freedom, and robustness (and sometimes its utter weirdness) and distills it into an OS experience that's unlike anything you've ever seen. We've been told it's for beginners, but we'd like to think it's for those who love a good laugh and a well-functioning system in equal measure.
+CoconutOS takes the best of GNU/Linux - its flexibility, freedom, and robustness (and sometimes its utter weirdness) and distills it into an OS experience that's unlike anything you've ever seen. We've been told it's for beginners, but we'd like to think it's for those who love a good laugh and a well-functioning system in equal measure. Did I mention coconutOS is a systemd-free linux distribution?
 
 ## Repositories
 
@@ -42,4 +42,4 @@ Happy hacking!
 
 ---
 
-*"Breaks more often just how I like it..."* - Richie Guix, Inspirational Speaker and Linux User Extraordinaire.
+*"Breaks more often, just how I like it..."* - Richie Guix, Inspirational Speaker and Linux User Extraordinaire.
