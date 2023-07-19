@@ -1,4 +1,4 @@
-# coconutOS - The One and Only True OS
+# coconutOS - The one and only true OS
 
 [![Build Status](https://travis-ci.org/CoconutOS/coconutos.svg?branch=master)](https://travis-ci.org/CoconutOS/coconutos)
 
