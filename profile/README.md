@@ -24,7 +24,7 @@ We invite everyone who wishes to witness the beauty of the free software movemen
 
 The latest stable release of CoconutOS can be found here. But be warned: once you start installing, you go straight through. NO breaks allowed. For detailed instructions, please refer to the [official CoconutOS Installation Guide](). In case the documentation hasn't been written yet, download the latest release here:
 
-- [coconutOS-live-20230720](https://github.com/coconut-os/coconut-mklive/suites/14435888217/artifacts/814755059)
+- [coconutOS-live-20230720](https://github.com/coconut-os/coconut-mklive/suites/14435888217/artifacts/814755059) [x86_64, iso] 📦
 
 ## Support
 
