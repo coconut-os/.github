@@ -1,47 +1,45 @@
-# coconutOS - The one and only true OS
+# coconutOS
 
-[![Build Status](https://travis-ci.org/CoconutOS/coconutos.svg?branch=master)](https://travis-ci.org/CoconutOS/coconutos)
+A Rust microkernel for GPU-isolated AI inference.
 
-Welcome to the world of CoconutOS! The linux distribution you didn't ask for, but the one you definitely need! Inspired by the ironically hilarious wisdom of [Richie Guix](https://www.youtube.com/watch?v=lE4UXdJSJM4) in a YouTube video by "Programmers are also human". The genesis of CoconutOS is a tongue-in-cheek love letter to the quirks and idiosyncrasies of the GNU/Linux community. 
+What started as a [tongue-in-cheek Linux distro](https://www.youtube.com/watch?v=lE4UXdJSJM4) inspired by the legendary Richie Guix has evolved into something slightly more ambitious: a capability-based microkernel written from scratch in Rust, designed to run AI inference workloads with GPU isolation that Linux can't offer.
 
-## About CoconutOS
+Turns out, when you joke about building your own OS long enough, you eventually just... build one.
 
-CoconutOS takes the best of GNU/Linux - its flexibility, freedom, and robustness (and sometimes its utter weirdness) and distills it into an OS experience that's unlike anything you've ever seen. We've been told it's for beginners, but we'd like to think it's for those who love a good laugh and a well-functioning system in equal measure. Did I mention coconutOS is a systemd-free linux distribution?
+## What is coconutOS?
+
+coconutOS runs "shards" — isolated address spaces with their own page tables, capabilities, and GPU partitions. The supervisor (microkernel) is ~5K lines of Rust with zero external runtime dependencies. GPU drivers run in user-mode shards, not ring 0. VRAM is zeroed on free. Every resource is capability-gated. Think OpenBSD's philosophy, applied to GPU compute.
+
+It boots on x86-64 (QEMU/UEFI), isolates GPU partitions via IOMMU, and runs a proof-of-concept transformer inference engine end-to-end.
 
 ## Repositories
 
-In this GitHub organization, you'll find all of our most prized CoconutOS treasures:
+| Repo | What it is |
+|------|-----------|
+| [`coconutOS`](https://github.com/coconut-os/coconutOS) | The microkernel, bootloader, GPU HAL, inference stack — everything |
+| [`coconut-mklive`](https://github.com/coconut-os/coconut-mklive) | The original Linux distro that started it all (archived) |
 
-1. `coconut-mklive`: Our crown jewel, the core OS. You may or may not turn your watch into a web server with it. Results may vary.
-2. `coconutos-packages`: Find all the packages you need. Libreoffice? Check. Pacman (no, not the game)? Check.
-3. `coconutos-documentation`: Because even with an OS this intuitive, who knows, you might need a little help.
+## Quick Start
 
-## Contributing
+```bash
+brew install qemu mtools llvm   # or apt equivalent
+git clone https://github.com/coconut-os/coconutOS.git
+cd coconutOS && ./scripts/qemu-run.sh
+```
 
-We invite everyone who wishes to witness the beauty of the free software movement to contribute. In this community, there are no checks for errors, no checks for dependencies. Check out our [CONTRIBUTING.md](CONTRIBUTING.md) and don't worry about it too much.
+## Status
 
-## Installation
-
-The latest stable release of CoconutOS can be found here. But be warned: once you start installing, you go straight through. NO breaks allowed. For detailed instructions, please refer to the [official CoconutOS Installation Guide](). In case the documentation hasn't been written yet, download the latest release here:
-
-- [coconutOS-live-20230720](https://github.com/coconut-os/coconut-mklive/suites/14435888217/artifacts/814755059) [x86_64, iso] 📦
-
-## Support
-
-We're not saying it's a perfect system. So, if you encounter a problem, don't blame Linux, blame GNOME, KDE, X11, GCC, Java... you get the gist. Here's the [official CoconutOS Troubleshooting Guide](https://github.com/CoconutOS/coconutos-documentation/blob/master/Troubleshooting.md). 
+| Phase | Status |
+|-------|--------|
+| CPU microkernel (shards, IPC, capabilities, filesystem) | Complete |
+| GPU isolation (IOMMU, partitioning, DMA, pledge/unveil, ASLR) | Complete |
+| Inference stack (runtime, C FFI, llama2.c port) | In progress |
+| Hardening & multi-vendor (NVIDIA, Apple, formal verification) | Planned |
 
 ## License
 
-CoconutOS - an embodiment of freedom, just not free beer. All our repos are licensed under the GNU GPL v3.0, unless we felt otherwise. See the [LICENSE](LICENSE) for more details.
-
-## Join Us!
-
-We're a community, and we've got the multiple sound systems to prove it! OSS, PulseAudio, JACK - each one trying to fix the problems of the previous one. Join us, contribute, or just laugh along at the sheer audacity of creating CoconutOS.
-
-Remember, everyone else is wrong, but that's just our personal view on what everyone should use. But hey, what's a bit of effort to try a new OS?
-
-Happy hacking!
+[ISC](https://github.com/coconut-os/coconutOS/blob/main/LICENSE)
 
 ---
 
-*"Breaks more often, just how I like it..."* - Richie Guix, Inspirational Speaker and Linux User Extraordinaire.
+*"Breaks more often, just how I like it..."* — Richie Guix
