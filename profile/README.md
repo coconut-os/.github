@@ -12,12 +12,14 @@ coconutOS runs "shards" — isolated address spaces with their own page tables, 
 
 It boots on x86-64 (QEMU/UEFI), isolates GPU partitions via IOMMU, and runs a proof-of-concept transformer inference engine end-to-end.
 
+Read more: [What Comes After the Last Programming Language?](https://raskell.io/articles/what-comes-after-the-last-programming-language/)
+
 ## Repositories
 
 | Repo | What it is |
 |------|-----------|
 | [`coconutOS`](https://github.com/coconut-os/coconutOS) | The microkernel, bootloader, GPU HAL, inference stack — everything |
-| [`coconut-mklive`](https://github.com/coconut-os/coconut-mklive) | The original Linux distro that started it all (archived) |
+| [`coconut-mklive`](https://github.com/coconut-os/coconut-mklive) | The original Linux distro that started it all (legacy) |
 
 ## Quick Start
 
@@ -31,9 +33,10 @@ cd coconutOS && ./scripts/qemu-run.sh
 
 | Phase | Status |
 |-------|--------|
-| CPU microkernel (shards, IPC, capabilities, filesystem) | Complete |
-| GPU isolation (IOMMU, partitioning, DMA, pledge/unveil, ASLR) | Complete |
-| Inference stack (runtime, C FFI, llama2.c port) | In progress |
+| CPU microkernel (shards, IPC, capabilities, filesystem) | ✅ Complete |
+| GPU isolation (IOMMU, partitioning, DMA, pledge/unveil, ASLR) | ✅ Complete |
+| Inference stack (runtime, C FFI, llama2.c port, pipeline parallelism, profiling) | ✅ Complete |
+| Benchmarking (Llama 70B latency vs. Linux/ROCm baseline) | 🔄 In progress |
 | Hardening & multi-vendor (NVIDIA, Apple, formal verification) | Planned |
 
 ## License
